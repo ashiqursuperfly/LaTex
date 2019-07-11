@@ -1,0 +1,150 @@
+\documentclass[letter, 12pt]{article}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{multirow}
+ \renewcommand{\labelenumii}{\Roman{enumii}}
+
+\author{CSE 300}
+\date{\today}
+\title{Sample Class}
+
+\begin{document}
+\maketitle 
+\tableofcontents
+
+\pagebreak
+
+
+\begin{abstract}
+	this is an abstract
+\end{abstract}
+
+
+\section{Introduction}
+Hello World!
+This is an \textbf{introduction.} 
+In SubSection \ref{sec:col}, we discuss Color.
+
+\subsection{First subsection}
+Sample \textit{text}
+
+
+\subsection{Special characters}
+
+Special %\Large{texts}   
+
+% Comment
+
+
+100\% commission 
+This is backslash \textbackslash .
+This is And \&
+
+
+\subsection{Color}
+\label{sec:col}
+
+{\color{red} This is in red}
+
+\section{List}
+
+\subsection{Ordered list}
+
+\begin{enumerate}
+	\item First item
+	\item second item
+\end{enumerate}
+
+\subsection{Unordered List}
+
+\begin{itemize}
+	\item First item
+	\item second item
+\end{itemize}
+
+\subsection{Description list}
+
+\begin{description}
+	\item[CSE] Computer science and Engineering
+	\item[ME] Mechanical Engineering
+\end{description}
+
+\subsection{nested list}
+	\begin{enumerate}
+		\item First item
+		\item second item
+		\begin{enumerate}
+			\item Nested item
+			\item Nested item
+			\begin{enumerate}
+				\item Nested item
+				\item Nested item			
+			\end{enumerate}
+		\end{enumerate}
+	\end{enumerate}
+	
+
+\subsection{Figure}
+
+In Figure \ref{pic:star}, we show a star picture. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.2]{star.png}
+	\caption{Star picture}
+	\label{pic:star}
+\end{figure}
+
+\section{Table}
+
+\subsection{Normal Table}
+
+\begin{tabular}{|l|cl|}
+	\hline
+	Name & Roll & CG   \\
+	\hline
+	Mr X & 1   &  9.9 \\ 
+	\cline{2-3}
+	Mr Y & 2   &  8.9 \\ 
+	\cline{2-3}
+\end{tabular}
+
+
+\subsection{Multicolumn table Table}
+
+
+\begin{tabular}{|l|cl|}
+	\hline
+	Name & Roll & CG   \\
+	\hline
+	Mr X & \multicolumn{2}{c|}{info not available} \\ 
+	\cline{2-3}
+	Mr Y & 2   &  8.9 \\ 
+	\cline{2-3}
+\end{tabular}
+
+\subsection{Multirow  Table}
+\begin{tabular}{|l|cl|}
+	\hline
+	Name & Roll & CG   \\
+	\hline
+	\multirow{2}{*}{Somebody} & 1   &  9.9 \\ 
+	\cline{2-3}
+	 & 2   &  8.9 \\ 
+	 \hline
+
+\end{tabular}
+
+\subsection{Both}
+\begin{tabular}{|l|cl|}
+	\hline
+	Name & Roll & CG   \\
+	\hline
+	Mr X & \multicolumn{2}{|c|}{\multirow{2}{*}{text}} \\
+	Mr Y & & \\ 
+	\hline
+	
+\end{tabular}
+
+
+\end{document}

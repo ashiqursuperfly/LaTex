@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath}
+
+\title{Lecture 2}
+\author{Tareq}
+
+\begin{document}
+\maketitle
+
+\section{Previous Class}
+
+usepackage \verb|\usepackage{verbatim}|.\textbackslash.
+
+\section{Figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\textwidth]{buetlogo.png}
+	\caption{Logo of BUET}
+	\label{fig:buetlogo}
+\end{figure}
+
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=0.8\textwidth]{ubuntulogo.png}
+		\caption{Ubuntu}
+	\end{subfigure}
+	~
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=0.8\textwidth]{kalilogo.png}
+		\caption{Kali Linux}
+	\end{subfigure}
+	
+	\caption{Linux distributions}
+\end{figure}
+
+
+\section{Bibliography}
+
+This book \cite{deng2009imagenet} is amazing. 
+
+
+\section{Mathematical Equation}
+
+%text a + a = 2a\\
+text $ a + a = 2a $\\
+
+text $$ a + a = 2a $$
+
+\begin{equation}
+	a + a = 2a
+\end{equation}
+
+$$ a^2 \quad a_22 \quad a_{in} \quad a_{2} $$
+
+$$ \int^a_b f(x)dx $$
+
+$$ \frac{\tau}{\pi} $$
+
+\begin{equation}
+	\begin{bmatrix}
+		1 & 0 & 0 \\
+		0 & 1 & 0 \\
+		0 & 0 & 1 \\
+	\end{bmatrix}
+\end{equation}
+
+
+\bibliographystyle{plain}
+\bibliography{bibfile}
+
+
+
+\end{document}
