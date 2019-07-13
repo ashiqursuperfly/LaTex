@@ -10,10 +10,13 @@
 
 \begin{document}
 \maketitle
+\tableofcontents
+
 
 \section{Previous Class}
 
-usepackage \verb|\usepackage{verbatim}|.\textbackslash.
+usepackage command : \verb|\usepackage{verbatim}|.\textbackslash.
+
 
 \section{Figure}
 
@@ -36,6 +39,11 @@ usepackage \verb|\usepackage{verbatim}|.\textbackslash.
 		\includegraphics[width=0.8\textwidth]{kalilogo.png}
 		\caption{Kali Linux}
 	\end{subfigure}
+	~
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=0.8\textwidth]{ubuntulogo.png}
+		\caption{Ubuntu}
+	\end{subfigure}
 	
 	\caption{Linux distributions}
 \end{figure}
@@ -44,24 +52,30 @@ usepackage \verb|\usepackage{verbatim}|.\textbackslash.
 \section{Bibliography}
 
 This book \cite{deng2009imagenet} is amazing. 
-
+This book \cite{knuth1989mathematical} is good too
 
 \section{Mathematical Equation}
 
 %text a + a = 2a\\
-text $ a + a = 2a $\\
+Hello world as u can see this is an inline equation.$ test-a + a = 2a $ Lets keep this as it is and leave it be.\\Hello world as u can see this is a specialized equation.$$ test-a + a = 2a $$ Lets keep this as it is and leave it be.
 
-text $$ a + a = 2a $$
-
-\begin{equation}
-	a + a = 2a
-\end{equation}
-
+\subsection{Subscript and SuperScript}
 $$ a^2 \quad a_22 \quad a_{in} \quad a_{2} $$
+
+\subsection{Methods for writing an Equation}
+\textbf{NOTE}\\
+1.wrap equation with \textdollar \textdollar \space for specialized Equation\\
+2.wrap equation with \textdollar \space for inline Equation\\
+3. Wrap with \verb|\begin{equation}| ... \verb|\end{equation}| for generating an automated id number for the equation. We can use \textbackslash label and \textbackslash ref to later cross ref this equation number. 
+
+
+
+\subsection{Math Functions}
 
 $$ \int^a_b f(x)dx $$
 
 $$ \frac{\tau}{\pi} $$
+
 
 \begin{equation}
 	\begin{bmatrix}
@@ -72,8 +86,17 @@ $$ \frac{\tau}{\pi} $$
 \end{equation}
 
 
+\begin{equation}
+\begin{matrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{matrix}
+\end{equation}
+
+
 \bibliographystyle{plain}
-\bibliography{bibfile}
+\bibliography{bibfile} 
 
 
 
