@@ -1,7 +1,7 @@
 \documentclass[a4paper, 12pt]{article}
 
 \title{Subfigure, Math, Bibliography}
-
+\author{Ashiq}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{amsmath}
@@ -15,22 +15,23 @@
 	
 	\section{Subfigure}
 	\begin{figure}[h]
-		\begin{subfigure}{0.2\textwidth}
+		\begin{subfigure}[t]{0.2\textwidth}
 			\centering
-			%\includegraphics[width=\textwidth]{index}
+			\includegraphics[width=\textwidth]{star.png}
 			\caption{Small}
 		\end{subfigure}
-		\begin{subfigure}{0.6\textwidth}
+		~
+		\begin{subfigure}[b]{0.6\textwidth}
 			\centering
-		%	\includegraphics[width=\textwidth]{index}
+			\includegraphics[width=\textwidth]{star.png}
 			\caption{Big}
 		\end{subfigure}
 		\caption{Beach}	
 	\end{figure}
 	\section{Math}
+	
 	\subsection{Inline}
 		$\forall x, x$ is positive and  $x \leq 5$.
-	
 	\subsection{Equation}
 	
 	\subsubsection{Algebra}
@@ -40,18 +41,16 @@
 		
 		\begin{equation*}
 			x_1^2 + x_2 = \sqrt{x+y}
-		\end{equation*}	
+		\end{equation*}
 		
 		\begin{equation}
 			\binom{n}{k} = \frac{n!}{k!(n-k)!}
-		\end{equation}		
-	\subsubsection{Trigonoteric}
+		\end{equation}
+				
+	\subsubsection{Trigonometric}
 		\begin{equation}
 			\sin^2\theta + \cos^2\theta = 1
 		\end{equation}
-		
-		
-		
 		\begin{align*}
 			\cos^2\theta & = \frac{1}{2}.2\cos^2\theta\\
 			& = \frac{1}{2}(1+\cos2\theta)
@@ -59,25 +58,74 @@
 	
 	\subsubsection{Calculus}
 		\begin{equation}
-			\lim_{x\to 0}	\frac{\sin x}{x} = 1
+			\lim_{x \to 0}	\frac{\sin x}{x} = 1
 		\end{equation}
 		\begin{equation}
-			\frac{d}{dx}e^x = e^x
+			\frac{d}{dx}e^x = e^x			
 		\end{equation}
 		
 		\begin{equation}
-			\int x^3 dx = \frac{x^4}{4} + c
+		\frac{\partial}{\partial x}e^x = e^x			
 		\end{equation}
+		
+		\begin{equation}
+			\int x^3 dx = \frac{x^4}{4} + c			
+		\end{equation}
+		
+		\begin{equation}
+			\int_b^a f(x)dx
+		\end{equation}
+	\subsubsection{Showing Multiple Lines Of Calculations}
+		\begin{align*}
+			\cos^2\theta & = 
+			\frac{1}{2}.2\cos^2\theta\\
+			& = \frac{1}{2}.(1 + \cos 2\theta)
+		\end{align*}
+		\subsubsection{Piece-Wise Functions}
+		\begin{equation}
+			F(x) =
+			\begin{cases}
+			100 \ & \text{if} \ x > 0 \\0 \ & \text{otherwise}
+			\end{cases} 
+		\end{equation}				
 		
 	\subsubsection{Miscellaneous}
 		\begin{equation}
 			\bigcup\limits_{i=1}^{n} A_i \leq \sum_{i=1}^{n} |A_i|
 		\end{equation}
+		\begin{equation}
+			\bigcup_{i=1}^{n} A_i \leq \sum_{i=1}^{n} |A_i|
+		\end{equation}
+	In algebra, a quadratic equation is any equation having the form $ax^2+bx+c=0$ where $x$ represents an unknown, and $a$, $b$, and $c$ represent known numbers, with
+	$a\neq0$. It can easily be seen, by polynomial expansion, that the following
+	equation is equivalent to the quadratic equation:
+	$${\left(x+\frac{b}{2a}\right)}^2=\frac{b^2-4ac}{4a^2}$$
+	
+	Taking the square root of both sides, and isolating $x$, gives:
+	\begin{equation}
+	x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+	\end{equation}
+	
+	\subsection{Some Equations:}
+	$$f_1(t) = \int_{3}^{5}sin(x)dx$$
+	
+	$$F(x) = A_0 + \sum_{n=1}^{N}\left[A_ncos\left(\frac{2\pi nx}{P}\right)+B_nsin\left(\frac{2\pi nx}{P}\right)\right]$$
+	
+	$$\lim\limits_{x\rightarrow a}\frac{f(x)-f(a)}{x - a}$$
+	
+	$$\binom{a}{b + c} \binom{\frac{n^2-1}{2}}{n+1}$$
+	
+	$$h\leq \sqrt{\frac{(s-a)(s-b)(s-c)}{s}}$$
+	
+	$$6CO_2 + 6H_2O \rightarrow C_6H_{12}O_6 + 6O_2$$
+	
+	$$\frac{1}{\log_2 x}$$
+		
 		
 	\section{Bibliography}
-		For any help, take a look at \cite{source1}.
+		For any help, take a look at \cite{Wiki}.
 	
 	\bibliographystyle{plain}
-	\bibliography{ref}
+	\bibliography{bibfile}
 	
 \end{document}
