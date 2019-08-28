@@ -1,3 +1,29 @@
+	\node[yshift=4cm,xshift=0.5cm](Application) {Application Side};
+\node[yshift=-3cm,xshift=0.5cm](User) {User Side};
+\node[rec,minimum width = 8cm,minimum height = 3cm,xshift = 0.5cm]() {};
+
+\node[xshift=3cm,yshift=-2.5cm](Im) {Im};\pause
+\draw[->] (Im) -- ++ (0,1.25);\pause
+\draw[->] (3,-0.5) -- ++ (0,2.2);\pause	
+\node[xshift=5.5cm,yshift=0.5cm](Bool1) {Bool};
+\draw[->] (Bool1) -- (3.1,0.5);\pause
+\draw[->] (3,2.2) -- ++ (0,1);\pause
+\node[xshift=3cm,yshift=3.5cm](Inp) {Inp};\pause
+\draw[->] (2.9,0.5) -- node[right] {If} (-0.5,0.5);\pause
+\node[rec,blue,minimum width = 3cm,minimum height = 6.5cm,xshift = 2.5cm,yshift=0.5cm](){};
+\node[rec,fill=blue,xshift=-5.5cm,yshift=5cm](inputFunc){};
+\node[right of=inputFunc,xshift=0.5cm](){Input Function};\pause
+
+% end of input behaviour
+\node[xshift=-2.5cm,yshift=3.5cm](Ic) {Ic};\pause
+\draw[->] (Ic) -- ++ (0,-1.25);\pause
+\draw[->] (-2.5,1.5) -- ++ (0,-2.2);\pause	
+\node[xshift=-5.5cm,yshift=0.5cm](Bool2) {Bool};
+\draw[->] (Bool2) -- (-3.1,0.5);\pause
+\draw[->] (-2.5,-1.5) -- ++ (0,-1);\pause
+\node[xshift=-2.5cm,yshift=-3cm](Out) {Out};\pause
+\node[rec,green,minimum width = 3cm,minimum height = 6.5cm,xshift = -2.5cm,yshift=0.5cm](){};
+
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
 \usetheme{Madrid}

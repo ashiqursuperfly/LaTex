@@ -3,10 +3,14 @@
 \usetikzlibrary{shapes}
 \usepackage[utf8]{inputenc}
 \usetheme{Madrid}
-\title[beamer]{PART 2}
-\author{Ashiqur Rahman}
-\date{July 2019}
 
+\author[F.Paterno]{Fabio Paterno}
+\title[A Theory of User-interaction Objects
+]{A Theory of User-interaction Objects}
+\institute[CNUCE]{Centro Nazionale Universitario di Calcolo Elettronico, Institute of CNR}
+\date{\today}
+
+\tikzstyle{oval} = [ellipse,draw,text centered]
 \tikzstyle{circ} = [circle,draw,text centered]
 \tikzstyle{rec} = [rectangle,draw,text centered]
 \tikzstyle{dia} = [diamond,aspect=4,draw]
@@ -19,6 +23,55 @@
     \tableofcontents
 \end{frame}
 
+\section{Problem Definition}
+\begin{frame}
+\frametitle{Problem Definition}	
+How to define user interface systems so that  
+\begin{itemize}
+	\item They can be described formally using precise mathematical notation 
+	\item Their behavior and properties can be methodically evaluated
+\end{itemize}
+\end{frame}
+
+\section{Motivation}
+\begin{frame}
+\frametitle{User Experience}
+User Interfaces are an important part of the user experience. \\
+They directly affect the users ability to analyze and understand the information presented. \newline \newline
+But  \newline
+\\They are way too complicated!
+\end{frame}
+
+\begin{frame}
+\frametitle{Motivation}
+Taking a mathematical approach to UI design helps us: \\
+\begin{itemize}
+	\item Provide useful indicators and guidelines to UI designers during design refinement phase\pause
+	\item Create better automated tools for UI design and testing \pause
+	\item Create more reusable UI elements
+\end{itemize}
+\end{frame}
+
+\section{Previous Works}
+\begin{frame}
+\frametitle{Previous Works}
+\addtobeamertemplate{block end}{}{\vspace*{1cm}}
+\begin{block}{B. A. Myers, ACM Transactions on Information Systems 8, 289-320}
+A new Model for handing input
+\end{block}
+
+\begin{block}{J. Foley et al. (1991) UIDE}
+An Intelligent User interface design environment
+\end{block}
+
+\begin{block}{L. Cinque et al. (1990)}
+Towards a formal specification methodology for iconic interface design
+\end{block}
+\end{frame}
+
+
+
+%PART - 2 
 \section{What is a UIS?}
 \begin{frame}{What is a UIS?}
    	Every Application has 3 major components.
@@ -59,11 +112,11 @@
 		\centering
 		\begin{tikzpicture}
 		
-		\node[rec,minimum width = 10cm,minimum height = 5cm,xshift = 0.5cm]() {};
-		\node[circ,xshift=-0.5cm,yshift = 1.5cm](Collection) {Collection};
-		\node[circ,xshift=-1cm,yshift=-1cm](Presentation) {Presentation};
-		\node[circ,xshift=2cm,yshift=-1cm](Measure) {Measure};
-		\node[circ,xshift=2cm,yshift=1.5cm](Control) {Control};
+		\node[rec,minimum width = 8cm,minimum height = 5cm,xshift = 0.5cm]() {};
+		\node[circ,fill=blue!35,xshift=-0.5cm,yshift = 1.35cm](Collection) {Collection};
+		\node[circ,fill=green!35,xshift=-1cm,yshift=-1cm](Presentation) {Presentation};
+		\node[circ,fill=yellow!35,xshift=2cm,yshift=-1cm](Measure) {Measure};
+		\node[circ,fill=violet!35,xshift=2cm,yshift=1.5cm](Control) {Control};
 		\node[yshift=3.5cm,xshift=0.5cm](Application) {Application Side};
 		\node[yshift=-3.5cm,xshift=0.5cm](User) {User Side};\pause
 		
@@ -74,7 +127,7 @@
 		\draw[->] (Control) -- (Application);\pause
 		
 		\draw[->] (Application) -- (Collection);\pause
-		\node[xshift=-4cm,yshift=1.5cm](TriggerApp) {Event Trigger};
+		\node[xshift=-4cm,yshift=1.35cm](TriggerApp) {Event Trigger};
 		\draw[->] (TriggerApp) -- (Collection);\pause
 		\draw[->] (Collection) -- (Presentation);\pause
 		
@@ -86,13 +139,73 @@
 \end{frame}
 
 \section{How it works?}
+
 \begin{frame}{How it works?}
-	Figure 3 goes here. with a pager. that animates the process of communication of interactors
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+	\node[yshift=3cm](Application) {Application Side};
+	\node[yshift=-2cm](User) {User Side};
+	\node[rec,minimum width = 6cm,minimum height = 2cm,yshift=0.5cm]() {};
+	
+	\node[xshift=2.5cm,yshift=-1.5cm](Im) {Im};\pause
+	\draw[->] (Im) -- ++ (0,1);\pause
+	\draw[->] (2.5,-0.35) -- ++ (0,1.5);\pause	
+	\node[xshift=4.5cm,yshift=0.5cm](Bool1) {Bool};
+	\draw[->] (Bool1) -- (2.6,0.5);\pause
+	\draw[->] (2.5,1.4) -- ++ (0,1);\pause
+	\node[xshift=2.5cm,yshift=2.6cm](Inp) {Inp};\pause
+	\draw[->] (2.4,0.5) -- node[right] {If} (-1.5,0.5);\pause
+	\node[rec,blue,minimum width = 2cm,minimum height = 2.5cm,xshift = 2.5cm,yshift=0.5cm](){};
+	
+	\node[rec,fill=blue,xshift=-5.5cm,yshift=4cm](inputFunc){};
+	\node[right of=inputFunc,xshift=0.5cm](){Input Function};\pause
+	% end of input behaviour
+	
+	
+	\node[xshift=-2cm,yshift=2.6cm](Ic) {Ic};\pause
+	\draw[->] (Ic) -- ++ (0,-1);\pause
+	\draw[->] (-2,1.25) -- ++ (0,-1.5);\pause	
+	\node[xshift=-4.5cm,yshift=0.5cm](Bool2) {Bool};
+	\draw[->] (Bool2) -- (-2,0.5);\pause
+	\draw[->] (-2,-0.5) -- ++ (0,-1);\pause
+	\node[xshift=-2cm,yshift=-1.75cm](Out) {Out};\pause
+	\node[rec,green,minimum width = 2cm,minimum height = 2.5cm,xshift = -2.5cm,yshift=0.5cm](){};
+	
+	\node[rec,fill=green,below of=inputFunc,yshift=0.5cm](outputFunc){};
+	\node[right of=outputFunc,xshift=0.55cm](){Output Function};\pause
+	
+	
+	
+	\end{tikzpicture}
+
+\end{figure}
+
 \end{frame}
 
-\section{Formal Definition of an Interactor}
-\begin{frame}{Formal Definition of an Interactor}
-	An block goes here. With title and description with defintion.Would need mathematical latex to notate the definitions.
+
+\section{Formal Definition of an Interactor & UIS}
+\begin{frame}{Definition of an Interactor}
+	
+	Now, we can finally define an Interactor mathematically.
+	\begin{block}{An Interactor is a pair of functions}
+		$$ I = (FI,FO) $$
+	\end{block}
+	
+	Where,\\
+	
+	 FI = Input Function 
+	 FO = Output Function 
+	
+	
+\end{frame}
+
+\begin{frame}{Definition of an UIS}
+So, We can define an UIS as,
+\begin{block}{An UIS is a composition of of Interactors}
+	$$ UIS = \left{ I1,I2,I3,.....\right}  $$
+\end{block}
+ 
 \end{frame}
 
 
